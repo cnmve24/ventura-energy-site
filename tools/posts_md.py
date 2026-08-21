@@ -17,6 +17,7 @@ MONTHS = ('January February March April May June July August September '
 DATE_RE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 FRONT_RE = re.compile(r'^---\s*\n(.*?)\n---\s*\n(.*)$', re.S)
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
+BARE_URL_RE = re.compile(r'(?<![">=])(https?://[^\s<>()]+[^\s<>().,;:])')
 BOLD_RE = re.compile(r'\*\*(.+?)\*\*')
 ITAL_RE = re.compile(r'(?<!\*)\*([^*]+)\*(?!\*)')
 
@@ -30,6 +31,9 @@ def inline(text):
     """Apply inline markdown. Call this after HTML escaping, so any tags
     produced here are ours rather than the author's."""
     text = LINK_RE.sub(lambda m: '<a href="%s">%s</a>' % (m.group(2), m.group(1)), text)
+    # a bare url in the sources list should still be clickable
+    text = BARE_URL_RE.sub(
+        lambda m: '<a href="%s" rel="nofollow noopener">%s</a>' % (m.group(1), m.group(1)), text)
     text = BOLD_RE.sub(r'<strong>\1</strong>', text)
     text = ITAL_RE.sub(r'<em>\1</em>', text)
     return text
@@ -48,7 +52,9 @@ def _parse_body(body):
         if not line.strip():
             flush()
             continue
-        if line.startswith('### '):
+        if line.startswith('> '):
+            flush(); blocks.append({'tag': 'note', 'text': line[2:].strip()})
+        elif line.startswith('### '):
             flush(); blocks.append({'tag': 'h3', 'text': line[4:].strip()})
         elif line.startswith('## '):
             flush(); blocks.append({'tag': 'h2', 'text': line[3:].strip()})

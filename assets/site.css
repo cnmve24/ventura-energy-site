@@ -160,6 +160,14 @@ h2.section-title{font-size:clamp(1.7rem,3.3vw,2.5rem);text-transform:uppercase}
   font-size:.7rem;font-weight:600;color:var(--deep);letter-spacing:.18em;
   text-transform:uppercase;margin:1.9em 0 .6em;
 }
+.art-note{
+  margin:0 0 1.9em;padding:18px 22px;background:var(--paper-2);
+  border-left:3px solid var(--sand);border-radius:2px;
+  font-size:.92rem;line-height:1.62;color:var(--text-soft);
+}
+.art-body a{color:var(--deep);text-decoration:underline;text-underline-offset:2px}
+.art-body a:hover{color:var(--sky)}
+.art-body ul li a{word-break:break-word}
 .art-body ul{margin:0 0 1.15em;padding:0;list-style:none}
 .art-body li{
   position:relative;padding-left:22px;margin-bottom:.7em;color:var(--text-soft);

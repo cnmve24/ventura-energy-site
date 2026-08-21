@@ -397,7 +397,10 @@ def article(k):
             out.append('</ul>'); open_list = False
         if tag == 'h1':
             tag = 'h2'
-        out.append(f'<{tag}>{text}</{tag}>')
+        if tag == 'note':
+            out.append(f'<aside class="art-note">{text}</aside>')
+        else:
+            out.append(f'<{tag}>{text}</{tag}>')
     if open_list:
         out.append('</ul>')
     first = next((b['text'] for b in d['blocks'] if b['tag'] == 'p'), '')
