@@ -1,0 +1,40 @@
+---
+title: How Southern California Edison's Rate Increases and the Inflation Reduction Act of 2022 Affect Water and Wastewater Districts
+date: 2022-08-09
+---
+
+As water and wastewater Districts in Southern California Edison's service territory receive bills for the utility's transition to new time-of-use rates in Spring of 2022, District officials are concerned about the dramatic energy bill increases they will see over the next 12 months, and next 20 years.
+
+Water and wastewater Districts in Southern California Edison's service territory can expect this to majorly impact to their electricity budget. The new time-of-use rates have caused dramatic increases in the amount of money Districts pay. In order to protect Districts from these increases, they should consider going solar. Solar can help Districts produce their own power, so they won't have to rely on the grid and will be immune to rate hikes like the one which occurred in April of this year. Additionally, the Inflation Reduction Act allows for a 30% federal tax credit for solar systems installed after December 31st, 2022. This tax credit can help reduce the cost of solar for Districts, making it more affordable.
+
+The Inflation Reduction Act (IRA) is a federal bill that passed the Senate on August 7th, 2022. The House is expected to pass this bill and have it be signed into law on August 12th, 2022. The IRA allows for a 30% federal tax credit for solar systems installed after December 31st, 2022. This tax credit can also be taken as a direct payment (cash) for tax-exempt entities like Districts. This will help reduce the cost of solar for Water and Wastewater Districts by up to 50%, making it more affordable to go solar. If you are a Water or Wastewater District in Southern California Edison's service territory, make sure to consider going solar and taking advantage of the Direct Pay program to avoid any significant increases in your electricity bills.
+
+Water and Wastewater Districts can compare a solar system cash purchase to a PPA. A solar system cash purchase means that you pay for your entire solar system upfront. A PPA (Power Purchase Agreement) is an agreement where you agree to buy all of your electricity from the installer/owner of the solar system for a set price per kWh over a period of time (usually 20 years). When comparing these two options, it is important to consider factors such as how much money the District will save with each option and how long it will take to break even.
+
+The below analysis considers a typical small to medium size District, paying $250,000 per year in energy bills to SCE in 2021. The new bill past the Spring of 2022 is expected to increase by 24% to $310,000 per year. Assuming rates continue increasing at a more modest 5% per year, the total payments over 20 years to SCE would be $10,250,000.
+
+Now, let's consider a solar system addition to the District. The size of the solar system that benefits Districts is typically between 70-75% of total annual kwh consumption. Assuming 70% to be conservative, we would size a solar system to be equal 750kw AC, or 985kw DC. At approximately $3.50/W-DC, this is an investment of $3,448,000. By only paying SCE for 30% of the District's bill (or $3,075,000 over 20 years), the District would save $3,427,170.
+
+With the introduction of the IRA bill, if prevailing wage and domestic content of components were utilized, this would increase the project budget by approximately 5%, but also increase the Direct Pay portion of the project refundable to the District by 10%. This means a total tax incentive of 40%.
+
+Put another way, of the initial investment of approximately $3.63 million, the District would receive a check from the IRS in the tax return after the project was placed in service for $1.45 million. Evaluating this check with the above increases the savings to the District over 20 years to $5.54m.
+
+In some cases, the District would prefer to not utilize their capital to install a solar system, and sign a PPA in lieu of the direct ownership of the solar system. In this case, the District would not pay any capital costs for the system, and only pay a price per kwh to the solar project owner for 20 years. In this case, when the IRS payment is paid to the District, this would be paid to the solar project owner. From there, the District would pay the solar project owner a $/kwh (for conservative purposes, let's assume this is $0.12/kwh, though Ventura Energy has heard of lower).
+
+Over the course of 20 years, this PPA project would save the District $3.84 million with no capital outlay.
+
+Each of the above scenarios assumes approximately $12,000/year in O&M costs, which is included in the financial analysis. For the District Ownership scenario, the District breaks even in 8 years. In the PPA scenario, the District breaks even and makes savings in Year 1, since there is no capital outlay.
+
+To summarize, here is the difference between each approach:
+
+Ownership vs. PPA with Inflation Reduction Act of 2022
+
+Solar can save districts money in a variety of ways, including reducing energy bills, receiving tax incentives, and avoiding rate increases. Districts that are considering solar should evaluate their options to see what is best for them. Solar is a long-term investment, and districts should consider the following when making their decision:
+
+- How much money the district will save over the life of the system
+
+- What approach makes the most sense for the district - owning the system, or signing a PPA
+
+We hope the information above was useful in your evaluation of solar for your facility.
+
+Please contact info@ventura.energy if you have any questions.

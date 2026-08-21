@@ -62,3 +62,7 @@ photography, is in the company Drive at `Company Docs\Website\`.
   on the page, but they are out of date.
 - The gigawatt and gigawatt-hour figures on the home page are company claims and
   should be checked before this is public.
+
+## Adding posts
+
+See [POSTING.md](POSTING.md).
