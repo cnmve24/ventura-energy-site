@@ -346,7 +346,7 @@ dialog.lb button{background:none;border:1px solid rgba(255,255,255,.45);color:#f
   grid-template-columns:1fr;align-items:start;
 }
 @media(min-width:760px){
-  .site-foot .wrap{grid-template-columns:1.2fr 1fr auto;gap:40px}
+  .site-foot .wrap{grid-template-columns:1.4fr auto auto auto;gap:44px}
 }
 .foot-brand img{height:64px;width:auto;margin-bottom:16px}
 .foot-name{font-size:.95rem;font-weight:500;color:#fff;letter-spacing:.01em}
@@ -354,6 +354,10 @@ dialog.lb button{background:none;border:1px solid rgba(255,255,255,.45);color:#f
   font-size:.88rem;line-height:1.7;color:var(--pale);opacity:.85;margin-top:8px;font-style:normal;
 }
 .foot-nav{display:flex;flex-direction:column;gap:10px}
+.foot-label{
+  font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--sand);font-weight:600;margin-bottom:2px;
+}
 .foot-nav a{
   font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
   color:rgba(255,255,255,.78);text-decoration:none;
