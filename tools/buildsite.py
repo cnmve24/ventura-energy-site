@@ -45,8 +45,9 @@ def nav(active, depth=0, over_photo=False):
     up = '../' * depth
     items = [('Projects', up + 'projects.html', 'projects'),
              ('Updates', up + 'updates.html', 'updates')]
+    current = ' aria-current="page"'
     links = ''.join(
-        f'<li><a href="{href}"{" aria-current=\"page\"" if key == active else ""}>{label}</a></li>'
+        f'<li><a href="{href}"{current if key == active else ""}>{label}</a></li>'
         for label, href, key in items)
     bar = f'''<div class="sitenav">
   <a href="{up}index.html"><img src="{up}assets/img/logo-white.png" alt="Ventura Energy" width="96" height="81"></a>
