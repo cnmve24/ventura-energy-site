@@ -1,5 +1,5 @@
 ---
-title: "The Interconnection Queue Just Shrank. That Isn't the Good News It Sounds Like."
+title: The Interconnection Queue Just Shrank. That Isn't the Good News It Sounds Like.
 date: 2026-09-01
 slug: the-interconnection-queue-just-shrank
 ---
@@ -8,7 +8,7 @@ For the better part of a decade, the story about America's interconnection queue
 
 It would be reasonable to read that as progress. The data underneath says otherwise. The queue got smaller mostly because projects gave up, not because they got built.
 
-## What the Numbers Actually Say
+## What the numbers actually say
 
 Lawrence Berkeley National Laboratory's Queued Up: 2026 Edition tracks every generator seeking transmission interconnection in the United States. As of the end of 2025, roughly 2,060 gigawatts of generation and storage were actively waiting in line, spread across about 8,200 projects. For scale, total installed U.S. generating capacity at the same date was about 1,374 GW. There is still roughly half again as much capacity waiting to connect as the grid currently carries.
 
@@ -21,7 +21,7 @@ The composition of that decline is where it gets interesting:
 
 Every clean resource category fell by roughly a fifth. Natural gas nearly doubled. That is not a queue clearing out in an orderly way. It is a queue whose composition is shifting, and the shift tracks closely with rising load forecasts from data centers and electrification, which are pulling developers toward resources that can promise firm, dispatchable output on a schedule.
 
-## The Completion Rate Is the Number Nobody Quotes
+## The completion rate is the number nobody quotes
 
 Here is the statistic that should reframe how anyone reads a project's queue position. Of all the capacity that submitted interconnection requests between 2000 and 2020, only 13 percent had reached commercial operation by the end of 2025. Seventy-five percent had been withdrawn. The remaining 10 percent was still, years later, sitting in the queue. Counted by number of projects rather than megawatts, the picture is only modestly better: 19 percent built, 71 percent withdrawn, 9 percent still waiting.
 
@@ -31,7 +31,7 @@ This matters enormously for how landowners should interpret what a developer tel
 
 The timeline for the survivors is not fast either. For projects that reached commercial operation in 2025, the median duration from interconnection request to commercial operation was more than five years. In 2008, that figure was under two years.
 
-## Why Projects Die: The Cost Problem
+## Why projects die: the cost problem
 
 The dominant reason projects withdraw is money, specifically network upgrade costs.
 
@@ -49,7 +49,7 @@ Second, the variance is extreme. A separate Berkeley Lab analysis of organized m
 
 Resource type matters too. Across 2018 to 2024 studies, average interconnection costs ran about $509/kW for solar, $504/kW for wind, and $437/kW for storage, against roughly $150/kW for natural gas. One important caveat on those figures: they average all projects, including the withdrawn ones carrying the highest study estimates, which were never actually paid. Looking only at projects that made it to completion, the same analysis shows solar at about $216/kW, storage at $151/kW, and wind at $103/kW. The gap between those two sets of numbers is essentially a measure of how much cost estimation is doing the filtering. Renewable projects tend to site where the resource is, which is often where the transmission is weakest.
 
-## The Second Bottleneck: Built on Paper, Not on the Ground
+## The second bottleneck: built on paper, not on the ground
 
 There is a less-discussed backlog behind the first one. Roughly 549 GW of capacity already holds a draft or fully executed interconnection agreement but has not reached commercial operation. That includes 256 GW of solar, 161 GW of storage, 76 GW of wind, and 45 GW of gas.
 
@@ -63,7 +63,7 @@ The public data does not settle this. Berkeley Lab reports how much capacity hol
 
 If that same dynamic extends past agreement execution, then completion rates and online dates are being set by network upgrade cost allocation more than by anything happening in the study queue, and interconnection reform that only speeds up studies will move the completion rate very little. This is a testable question and a useful one to press developers and regulators on directly: of capacity that reached an executed agreement in the last five years, how much has since withdrawn, and what were the assigned upgrade costs on those projects versus the ones that got built?
 
-## The Gas Surge Has a Supply Chain Behind It, and It Is Not Fast
+## The gas surge has a supply chain behind it, and it is not fast
 
 The 86 percent jump in gas capacity entering the queue is the clearest signal in the dataset that data center development is well past the announcement stage. Developers do not pay study deposits on speculative load. EIA now forecasts U.S. electricity demand rising through 2027, driven largely by large computing facilities, and describes it as the strongest four-year growth in power demand since 2000.
 
@@ -77,7 +77,7 @@ Put the two lines side by side and a timeline problem appears. A gas project ent
 
 That has three consequences worth watching. Announced data center load may arrive on a schedule that the generation fleet cannot match, which pushes the balancing burden onto existing units, demand response, and whatever can be sited fast. Turbine cost inflation of the magnitude above changes the economics that made gas the default answer in the first place, and narrows the gap against storage and renewables that can be delivered sooner. And the same load growth that pulled gas into the queue is a reason to expect the clean resource categories to come back, because in a market where the firm option is priced at $3,000/kW and dated 2031, the resource that can be energized in 2028 has an argument it did not have two years ago.
 
-## What Is Actually Being Done
+## What is actually being done
 
 Two reform efforts are worth understanding.
 
@@ -87,7 +87,7 @@ In California, CAISO's Interconnection Process Enhancements 5.0 is now approved 
 
 The through-line in both reforms is the same: raise the bar for entry so that queue position means something. Neither one touches the cost allocation question, and neither one builds a turbine.
 
-## What This Means If You Own Land, or Write Policy
+## What this means if you own land, or write policy
 
 If you are a landowner evaluating a lease or option offer, the queue data suggests a few concrete questions. Where is this project in the queue, and in which cluster? Has the interconnection study been completed, and what did the network upgrade cost estimate come back at? Is there an executed interconnection agreement, or just a request? Is there an offtake agreement? For a gas project, is there a turbine slot, and for what delivery year? A developer with completed studies, a signed PPA, and equipment secured is in a materially different position than one holding a queue number. Option payments are real money, but a multi-year option on land tied to a class of project that has historically been built less than one time in five deserves terms that reflect that risk.
 
