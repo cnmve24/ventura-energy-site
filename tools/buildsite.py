@@ -385,6 +385,12 @@ def updates_index():
     return p + footer()
 
 
+def post_nav_link(slug, label, arrow_cls):
+    return (f'<a class="post-nav-link {arrow_cls}" href="{SLUG[slug]}.html">'
+            f'<span class="post-nav-label">{label}</span>'
+            f'<span class="post-nav-title">{esc(POSTS[slug]["title"])}</span></a>')
+
+
 def article(k):
     d = POSTS[k]
     out, open_list = [], False
@@ -407,6 +413,21 @@ def article(k):
     first = next((b['text'] for b in d['blocks'] if b['tag'] == 'p'), '')
     p = head(d['title'] + ' | Ventura Energy', first[:155], depth=1)
     p += nav('updates', depth=1)
+
+    # ORDER is newest-first, so the next-older post sits right after this
+    # one in ORDER, and the next-newer post sits right before it.
+    idx = ORDER.index(k)
+    newer = ORDER[idx - 1] if idx > 0 else None
+    older = ORDER[idx + 1] if idx < len(ORDER) - 1 else None
+    post_nav = ''
+    if older or newer:
+        post_nav += '<nav class="post-nav rise" aria-label="More updates">'
+        post_nav += (post_nav_link(older, '&larr; Previous update', 'prev')
+                     if older else '<span class="post-nav-link"></span>')
+        post_nav += (post_nav_link(newer, 'Next update &rarr;', 'next')
+                     if newer else '<span class="post-nav-link"></span>')
+        post_nav += '</nav>'
+
     p += f'''<section class="band article">
   <div class="wrap">
     <div class="art-head rise">
@@ -414,6 +435,7 @@ def article(k):
       <h1 class="art-title">{esc(d["title"])}</h1>
     </div>
     <div class="art-body rise">{"".join(out)}</div>
+    {post_nav}
     <div class="art-foot rise">
       <a class="art-back" href="../updates.html">All updates</a>
       <a class="art-back" href="../index.html">Ventura Energy</a>
