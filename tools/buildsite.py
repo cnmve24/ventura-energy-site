@@ -88,12 +88,117 @@ def footer(depth=0):
   </div>
   <div class="foot-legal"><div class="wrap">
     <span>Ventura Energy LLC</span>
+    <span class="foot-legal-links"><a href="{up}alerts.html">Site alerts</a><a href="{up}sms-terms.html">SMS terms</a><a href="{up}privacy.html">Privacy</a></span>
   </div></div>
 </footer>
 <script src="{up}assets/site.js"></script>
 </body>
 </html>
 '''
+
+
+# ---------------------------------------------------------------- legal + SMS
+# Toll-free SMS verification (Twilio, Oct 2026) needs a public opt-in page with
+# the disclosures next to the phone field, plus Terms and a Privacy Policy
+# linked from it. Keep the three consistent: the reviewer compares them.
+# Never list customer sites here (critical infrastructure, see site policy).
+SIGNUP_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfSNZ9zL5alrLDpY2ZFkhdLjJpznlvdqC7AUX_X5-hQ96dxVw/viewform?embedded=true'  # Google Form embed URL (".../viewform?embedded=true"); empty = placeholder
+SUPPORT_EMAIL = 'info@ventura.energy'
+CONSENT = ('By submitting this form, you agree to receive recurring automated text alerts from '
+           'Ventura Energy about grid power outages and power restoration at your site(s). '
+           'Message frequency varies. Message and data rates may apply. Reply HELP for help or '
+           'STOP to opt out. Consent is not a condition of service.')
+
+
+def legal_page(title, eyebrow, heading, body_html, desc):
+    p = head(f'{title} | Ventura Energy', desc)
+    p += nav('')
+    p += f"""<section class="article">
+  <div class="wrap">
+    <header class="art-head">
+      <p class="eyebrow on-light">{eyebrow}</p>
+      <h1 class="art-title">{heading}</h1>
+    </header>
+    <div class="art-body">
+{body_html}
+    </div>
+  </div>
+</section>
+"""
+    return p + footer()
+
+
+def alerts():
+    if SIGNUP_FORM_URL:
+        form = (f'<iframe class="signup-frame" src="{esc(SIGNUP_FORM_URL)}" title="Site alerts sign-up form" '
+                'loading="lazy">Loading the sign-up form...</iframe>')
+    else:
+        form = '<div class="signup-frame signup-pending">Sign-up form coming soon.</div>'
+    body = f"""      <p>Ventura Energy runs battery storage at our customers' water pumping sites. If you work with one of
+      those sites, you can get a text the moment we see grid power drop there, with the battery energy
+      remaining and the estimated pump run time, and another text when grid power is restored.</p>
+      <h2>What you will get</h2>
+      <ul>
+        <li>A text when grid power is lost at your site, with battery energy remaining and estimated pump run time.</li>
+        <li>A text when grid power is restored.</li>
+        <li>No marketing. Alerts are sent only when something happens at your site, typically a few per month.</li>
+      </ul>
+      <h2>Sign up</h2>
+      <div class="signup-box">
+        <p class="signup-consent">{esc(CONSENT)}
+        <a href="sms-terms.html">SMS Terms</a> &middot; <a href="privacy.html">Privacy Policy</a></p>
+        {form}
+      </div>
+      <p>Each person signs up for their own phone. To stop alerts at any time, reply STOP to any message.
+      For help, reply HELP or email <a href="mailto:{SUPPORT_EMAIL}">{SUPPORT_EMAIL}</a>.</p>"""
+    return legal_page('Site alerts', 'Site alerts', 'Grid outage alerts by text', body,
+                      'Sign up for Ventura Energy text alerts about grid outages and power restoration at your site.')
+
+
+def sms_terms():
+    body = f"""      <p><strong>Program.</strong> Ventura Energy Site Alerts is an automated text message program run by
+      Ventura Energy LLC, 925 De La Vina Street, Ste 104, Santa Barbara, CA 93101.</p>
+      <p><strong>What we send.</strong> By providing your mobile number on our <a href="alerts.html">sign-up form</a>,
+      you agree to receive recurring automated text alerts from Ventura Energy about grid power outages and
+      power restoration at your site(s), including battery energy remaining and estimated pump run time.
+      We do not send marketing messages through this program.</p>
+      <p><strong>Frequency and cost.</strong> Message frequency varies with site events. Message and data rates may apply.</p>
+      <p><strong>Opting out and help.</strong> Reply STOP to any message to cancel; you will receive one
+      confirmation and no further messages. Reply HELP for help, or contact us at
+      <a href="mailto:{SUPPORT_EMAIL}">{SUPPORT_EMAIL}</a>.</p>
+      <p><strong>Consent is optional.</strong> Signing up is not a condition of any service from Ventura Energy.</p>
+      <p><strong>Delivery.</strong> Wireless carriers are not liable for delayed or undelivered messages.
+      Alerts depend on monitoring data from the site equipment and are not a substitute for on-site alarms.</p>
+      <p><strong>Privacy.</strong> Participation is subject to our <a href="privacy.html">Privacy Policy</a>.</p>"""
+    return legal_page('SMS Terms', 'Site alerts', 'SMS Terms', body,
+                      'Terms for the Ventura Energy Site Alerts text message program.')
+
+
+def privacy():
+    body = f"""      <p>This policy explains what personal information Ventura Energy LLC collects through this website and
+      our Site Alerts text program, and how we use it.</p>
+      <h2>What we collect</h2>
+      <ul>
+        <li>Contact details you send us by email, such as your name, company and email address.</li>
+        <li>For Site Alerts: your name, company, mobile number and the site(s) you want alerts for, from our sign-up form.</li>
+      </ul>
+      <h2>How we use it</h2>
+      <p>We use contact details to reply to you and to work with your organization. We use Site Alerts sign-up
+      information only to send the alerts you asked for and to handle STOP and HELP requests.</p>
+      <h2>Sharing</h2>
+      <p>We do not sell personal information. We use service providers that process information on our behalf
+      only to run our business, such as our email and form provider and our text messaging provider to deliver
+      alerts. All the above categories exclude text messaging originator opt-in data and consent; this
+      information won&rsquo;t be shared with any third parties.</p>
+      <h2>Keeping and removing your information</h2>
+      <p>We keep Site Alerts numbers until you opt out. Reply STOP to any alert, or email
+      <a href="mailto:{SUPPORT_EMAIL}">{SUPPORT_EMAIL}</a>, and we will remove your number.</p>
+      <h2>Contact</h2>
+      <p>Questions about this policy: <a href="mailto:{SUPPORT_EMAIL}">{SUPPORT_EMAIL}</a>, or Ventura Energy LLC,
+      925 De La Vina Street, Ste 104, Santa Barbara, CA 93101.</p>
+      <p class="art-note">Last updated October 19, 2026.</p>"""
+    return legal_page('Privacy Policy', 'Ventura Energy', 'Privacy Policy', body,
+                      'How Ventura Energy collects and uses personal information, including for Site Alerts.')
 
 
 # ---------------------------------------------------------------- page bodies
@@ -484,6 +589,9 @@ if not os.path.exists(f'{OUT}/assets/img/favicon.png'):
 open(f'{OUT}/index.html', 'w', encoding='utf-8').write(home())
 open(f'{OUT}/projects.html', 'w', encoding='utf-8').write(projects())
 open(f'{OUT}/updates.html', 'w', encoding='utf-8').write(updates_index())
+open(f'{OUT}/alerts.html', 'w', encoding='utf-8').write(alerts())
+open(f'{OUT}/sms-terms.html', 'w', encoding='utf-8').write(sms_terms())
+open(f'{OUT}/privacy.html', 'w', encoding='utf-8').write(privacy())
 for k in ORDER:
     open(f'{OUT}/updates/{SLUG[k]}.html', 'w', encoding='utf-8').write(article(k))
 
