@@ -104,10 +104,14 @@ def footer(depth=0):
 # Never list customer sites here (critical infrastructure, see site policy).
 SIGNUP_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfSNZ9zL5alrLDpY2ZFkhdLjJpznlvdqC7AUX_X5-hQ96dxVw/viewform?embedded=true'  # Google Form embed URL (".../viewform?embedded=true"); empty = placeholder
 SUPPORT_EMAIL = 'info@ventura.energy'
-CONSENT = ('By submitting this form, you agree to receive recurring automated text alerts from '
-           'Ventura Energy about grid power outages and power restoration at your site(s). '
-           'Message frequency varies. Message and data rates may apply. Reply HELP for help or '
-           'STOP to opt out. Consent is not a condition of service.')
+# Twilio rejected the first verification (30505, 2026-10-28) because agreeing to
+# texts was required to submit. Text consent is now its own optional checkbox on
+# the form; submitting the form alone signs someone up for email alerts only.
+CONSENT = ('Text messages are optional. You can sign up for email alerts only. If you also check the '
+           'text-message box on the form and enter your mobile number, you agree to receive recurring '
+           'automated text alerts from Ventura Energy about grid power outages and power restoration at '
+           'your site(s). Message frequency varies. Message and data rates may apply. Reply HELP for help '
+           'or STOP to opt out. Signing up is not a condition of any service.')
 
 
 def legal_page(title, eyebrow, heading, body_html, desc):
@@ -136,11 +140,13 @@ def alerts():
         form = '<div class="signup-frame signup-pending">Sign-up form coming soon.</div>'
     body = f"""      <p>Ventura Energy runs battery storage at our customers' water pumping sites. If you work with one of
       those sites, you can get a text the moment we see grid power drop there, with the battery energy
-      remaining and the estimated pump run time, and another text when grid power is restored.</p>
+      remaining and the estimated pump run time, and another alert when grid power is restored. Alerts come by
+      email, and by text if you choose.</p>
       <h2>What you will get</h2>
       <ul>
-        <li>A text when grid power is lost at your site, with battery energy remaining and estimated pump run time.</li>
-        <li>A text when grid power is restored.</li>
+        <li>An alert when grid power is lost at your site, with battery energy remaining and estimated pump run time.</li>
+        <li>An alert when grid power is restored.</li>
+        <li>By email, and by text only if you check the optional text-message box.</li>
         <li>No marketing. Alerts are sent only when something happens at your site, typically a few per month.</li>
       </ul>
       <h2>Sign up</h2>
@@ -158,15 +164,16 @@ def alerts():
 def sms_terms():
     body = f"""      <p><strong>Program.</strong> Ventura Energy Site Alerts is an automated text message program run by
       Ventura Energy LLC, 925 De La Vina Street, Ste 104, Santa Barbara, CA 93101.</p>
-      <p><strong>What we send.</strong> By providing your mobile number on our <a href="alerts.html">sign-up form</a>,
-      you agree to receive recurring automated text alerts from Ventura Energy about grid power outages and
+      <p><strong>What we send.</strong> If you check the optional text-message box on our
+      <a href="alerts.html">sign-up form</a> and provide your mobile number, you agree to receive recurring automated text alerts from Ventura Energy about grid power outages and
       power restoration at your site(s), including battery energy remaining and estimated pump run time.
       We do not send marketing messages through this program.</p>
       <p><strong>Frequency and cost.</strong> Message frequency varies with site events. Message and data rates may apply.</p>
       <p><strong>Opting out and help.</strong> Reply STOP to any message to cancel; you will receive one
       confirmation and no further messages. Reply HELP for help, or contact us at
       <a href="mailto:{SUPPORT_EMAIL}">{SUPPORT_EMAIL}</a>.</p>
-      <p><strong>Consent is optional.</strong> Signing up is not a condition of any service from Ventura Energy.</p>
+      <p><strong>Consent is optional.</strong> Text messages are opt-in: you can sign up for email alerts without
+      agreeing to texts, and signing up is not a condition of any service from Ventura Energy.</p>
       <p><strong>Delivery.</strong> Wireless carriers are not liable for delayed or undelivered messages.
       Alerts depend on monitoring data from the site equipment and are not a substitute for on-site alarms.</p>
       <p><strong>Privacy.</strong> Participation is subject to our <a href="privacy.html">Privacy Policy</a>.</p>"""
