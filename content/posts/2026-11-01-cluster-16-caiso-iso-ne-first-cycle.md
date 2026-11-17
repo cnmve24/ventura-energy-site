@@ -1,5 +1,5 @@
 ---
-title: "Cluster 16 Opens Today: What CAISO Applicants Face, and What ISO-NE's First Cycle Already Shows"
+title: Cluster 16 Opens Today: What CAISO Applicants Face, and What ISO-NE's First Cycle Already Shows
 date: 2026-11-01
 slug: cluster-16-caiso-iso-ne-first-cycle
 ---
