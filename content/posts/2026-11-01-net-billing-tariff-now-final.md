@@ -1,6 +1,6 @@
 ---
 title: The Net Billing Tariff Is Now Final: Storage Is No Longer Optional
-date: 2026-12-01
+date: 2026-11-01
 slug: net-billing-tariff-now-final
 ---
 
